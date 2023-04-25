@@ -17,7 +17,7 @@ module.exports = async function getConfig(github, fileName, { owner, repo, ref }
 
     return parseConfig(response.data.content)
   } catch (error) {
-    if (error.code === 404) {
+    if (error.status === 404) {
       return null
     }
 
